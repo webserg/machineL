@@ -12,8 +12,10 @@ J = 0;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
-
-
+h = X*theta;
+delta = h-y;
+delta_square = delta.^2;
+J = sum(delta_square)/(2*m)
 
 
 
