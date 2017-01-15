@@ -94,10 +94,10 @@ for i = 1 : m
   yvec(y(i)) = 1;
   sigma3=a3(:,i) - yvec;    
   sigma2=(t2'*sigma3).*sigmoidGradient(z2(:,i)); 
-  delta1=sigma2*a1(i,:);
-  Theta1_grad=Theta1_grad+delta1;
-  delta2=sigma3*a2(i,:);
-  Theta2_grad=Theta2_grad+delta2;   
+  delta1=sigma2 * a1(i,:);
+  Theta1_grad=Theta1_grad + delta1;
+  delta2=sigma3 * a2(i,:);
+  Theta2_grad=Theta2_grad + delta2;   
 end
 Theta1_grad=Theta1_grad./m;
 Theta2_grad=Theta2_grad./m;
