@@ -59,18 +59,7 @@ for i = 1:m
   error_val(i) = Jv;
   [Jt, _] = linearRegCostFunction(X(1:i, :), y(1:i), theta, 0);
   error_train(i) = Jt;
-  %h = X(1:i,:) * theta;
-  %delta = h - y(1:i);
-  %J = 1/(2 * m) * sum( delta.^2 ) ;
-  %error_train(i)=J;
-  %h = Xval * theta;
-  %delta = h - yval;
-  %J = 1/(2 * m) * sum( delta.^2 ) ;
-  %error_val(i)=J;
 end  
-
-
-
 
 
 % -------------------------------------------------------------
