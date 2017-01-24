@@ -26,11 +26,11 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 total = accumarray(idx,1);
-A1 = accumarray(idx,X(:,1));
-A2 = accumarray(idx,X(:,2));
+for j = 1:n
+  A(:,j) = accumarray(idx,X(:,j));
+end
 for i = 1:K
-  centroids(i,1) = A1(i) / total(i);
-  centroids(i,2) = A2(i) / total(i);
+  centroids(i,:) = A(i,:)./total(i);
 end
 
 
