@@ -41,11 +41,12 @@ Theta_grad = zeros(size(Theta));
 %
 prediction = X * Theta';
 diff = R.*(prediction - Y);
-J = 1/2 * sum(sum((diff.^2)));
+regularization = lambda/2 * sum(sum(Theta.^2)) + lambda/2 * sum(sum(X.^2));
+J = 1/2 * sum(sum((diff.^2))) + regularization;
 
-X_grad = diff * Theta;
+X_grad = diff * Theta + lambda.*X;
 
-Theta_grad = diff' * X;
+Theta_grad = diff' * X + lambda.*Theta;
 
 
 
